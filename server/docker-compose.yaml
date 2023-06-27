@@ -8,6 +8,8 @@ services:
     command: nodemon -r dotenv/config server.js
     depends_on:
       - mongodb
+      - redis
+      - dynamo
     volumes:
       - ./:/app
       - /app/node_modules
@@ -25,6 +27,12 @@ services:
     restart: always
     ports:
       - "6379:6379"
+  dynamo:
+    container_name: dynamo
+    image: amazon/dynamodb-local
+    restart: always
+    ports:
+      - "8000:8000"
 
 networks:
   default:
