@@ -5,9 +5,6 @@ import dynamoose from "dynamoose";
 const mongodbEndpoint = process.env.mongoDBEndpoint;
 const redisEndpoint = process.env.redisEndpoint;
 const dynamodbEndpoint = process.env.dynamodbEndpoint;
-const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
-const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
-const AWS_REGION = process.env.AWS_REGION;
 
 export const mainHealthController = (req, res) => res.send({ result: "Server is fine!" });
 
