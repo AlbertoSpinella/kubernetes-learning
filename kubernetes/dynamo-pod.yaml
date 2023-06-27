@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dynamo
+  labels:
+    run: dynamo
+spec:
+  containers:
+  - name: dynamo
+    image: amazon/dynamodb-local
+    ports:
+    - containerPort: 8000

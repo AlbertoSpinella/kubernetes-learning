@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongo-service
+  name: dynamo-service
 spec:
   type: NodePort
   selector:
-    run: mongo
+    run: dynamo
   ports:
     - protocol: TCP
-      port: 27017
-      targetPort: 27017
-      nodePort: 30002
+      port: 8000
+      targetPort: 8000
+      nodePort: 30004
