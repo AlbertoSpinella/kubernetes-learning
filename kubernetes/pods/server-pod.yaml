@@ -13,11 +13,11 @@ spec:
     - containerPort: 3000
     env:
     - name: mongoDBEndpoint
-      value: mongodb://mongo-service.default.svc.cluster.local:27017
+      value: mongodb://mongo-service.default.svc.cluster.local:27120
     - name: redisEndpoint
-      value: redis://redis-service.default.svc.cluster.local:6379
+      value: redis://redis-service.default.svc.cluster.local:7000
     - name: dynamodbEndpoint
-      value: http://dynamo-service.default.svc.cluster.local:8000
+      value: http://dynamo-service.default.svc.cluster.local:9000
     - name: AWS_ACCESS_KEY_ID
       value: test
     - name: AWS_SECRET_ACCESS_KEY

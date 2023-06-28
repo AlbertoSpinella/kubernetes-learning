@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: redis-service
+  name: mongo-service
 spec:
   type: NodePort
   selector:
-    run: redis
+    run: mongo
   ports:
     - protocol: TCP
-      port: 6379
-      targetPort: 6379
-      nodePort: 30003
+      port: 27120
+      targetPort: 27017
+      nodePort: 30002
