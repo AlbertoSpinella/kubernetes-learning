@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deploy
+  labels:
+    run: server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: server
+  template:
+    metadata:
+      labels:
+        run: server
+    spec:
+      containers:
+      - name: server
+        image: kubernetes-learning-server
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
+        env:
+        - name: mongoDBEndpoint
+          value: mongodb://mongo-service.default.svc.cluster.local:27120
+        - name: redisEndpoint
+          value: redis://redis-service.default.svc.cluster.local:7000
+        - name: dynamodbEndpoint
+          value: http://dynamo-service.default.svc.cluster.local:9000
+        - name: AWS_ACCESS_KEY_ID
+          value: test
+        - name: AWS_SECRET_ACCESS_KEY
+          value: test
+        - name: AWS_REGION
+          value: eu-central-1
